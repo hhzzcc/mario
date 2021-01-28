@@ -8,7 +8,7 @@ export class BuildingBorn extends Building {
         this.index = index;
         this.animatedX = 0;
         this.animatedY = 0;
-        this.isPhysical = false;
+        this.ablePhysical = false;
         this.isCrop = true;
         this.type = 'building-Born';
     }

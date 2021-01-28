@@ -1,6 +1,6 @@
 <template>
     <div class="editor-content">
-        <div>
+        <div v-if="isLoaded">
             <div class="editor-content__game">
                 <span @click="$emit('page-prev')" v-if="isOpenEditor">←<div>相机左移</div></span>
 
@@ -18,7 +18,7 @@
 
                 <span @click="$emit('page-next')" v-if="isOpenEditor">→<div>相机右移</div></span>
             </div>
-            <div class="editor-content__tip">
+            <div class="editor-content__tip" :style="{ paddingLeft: isOpenEditor ? '90px' : null }">
                 键盘操作：上下左右控制&nbsp;&nbsp;空格发射子弹
             </div>
             <Tools
@@ -26,20 +26,28 @@
                 :tools="tools"
                 @change="v => $emit('change-tool', v)"/>
         </div>
+        <Icon name="iconloading-copy" v-else/>
     </div>
 </template>
 
 <script>
+import Icon from '@/components/icon';
+
 import Grids from './grids';
 import Tools from './tools';
 
 export default ({
     name: 'editor-content',
     components: {
+        Icon,
         Grids,
         Tools
     },
     props: {
+        isLoaded: {
+            type: Boolean,
+            default: false
+        },
         gridWidth: {
             type: Number,
             default: 0
@@ -112,7 +120,6 @@ export default ({
 
     &__tip {
         padding-top: 8px;
-        padding-left: 90px;
         color: #33383e;
         font-weight: bold;
     }
@@ -129,6 +136,17 @@ export default ({
         color: #33383e;
         font-size: 12px;
         font-weight: bold;
+    }
+
+    .icon {
+        font-size: 60px;
+        animation: icon-rotation 1s infinite linear;
+    }
+
+    @keyframes icon-rotation {
+        100% {
+            transform: rotate(360deg);
+        }
     }
 }
 </style>

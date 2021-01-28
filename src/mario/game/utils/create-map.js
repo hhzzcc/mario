@@ -1,11 +1,13 @@
+import { baseData } from '../data/base';
 import { BuildingAsk, BuildingGold, BuildingFlow, BuildingStone, BuildingNormal } from '../js/building';
 
 const handleBuilding = (m, allImages) => {
+    
     const params = {
         x: m.x,
         y: m.y,
-        w: 32,
-        h: 32,
+        w: baseData.unit,
+        h: baseData.unit,
         images: allImages.building[m.type.replace('-', '')],
         ableHorn: false,
         ableBorn: false

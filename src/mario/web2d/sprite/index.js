@@ -27,7 +27,9 @@ export class Sprite {
         // 是否裁剪
         this.isCrop = isCrop;
         // 是否受物理效果影响
-        this.isPhysical = true;
+        this.ablePhysical = true;
+        // 是否覆盖相同位置下的精灵
+        this.ableCoverIdenticalPosition = false;
     }
 
     run() {

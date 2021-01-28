@@ -3,11 +3,13 @@
         <Header
             @edit-start="handleEditStart"
             @edit-end="handleEditEnd"
+            :isOpenEditor.sync="isOpenEditor"
         />
         <Maps
             :maps="maps"
             :active="mapActive"
             @change="handleActiveMap"
+            @delete="handleDeleteMap"
             @add="handleAddMap"
         />
 
@@ -17,7 +19,8 @@
             :gridHeight="gridHeight"
             :gridUnit="gridUnit"
             :tools="tools"
-            :isOpenEditor="isOpenEditor"
+            :isOpenEditor.sync="isOpenEditor"
+            :isLoaded="isLoaded"
             @page-prev="$emit('page-prev')"
             @page-next="$emit('page-next')"
             @change-grid="onChangeGrid"
@@ -31,8 +34,7 @@
 </template>
 
 <script>
-import { mapData } from '@/mario/game/data/map';
-import { mushroomData } from '@/mario/game/data/mushroom.js';
+import { level1, level2 } from '@/mario/game/data/levels';
 import { initImages } from '@/mario/game/utils/init-image';
 import { baseData } from '@/mario/game/data/base';
 
@@ -62,13 +64,11 @@ export default ({
             maps: [
                 {
                     title: '地图1',
-                    mapData,
-                    mushroomData
+                    ...level1
                 },
                 {
                     title: '地图2',
-                    mapData,
-                    mushroomData: []
+                    ...level2
                 }
             ],
             mapActive: 0,
@@ -78,49 +78,71 @@ export default ({
             currentTool: null,
             gameImages: null,
             tools: [],
-            isOpenEditor: false
+            isOpenEditor: false,
+            // 加载完毕
+            isLoaded: false,
         };
     },
     mounted() {
+        console.log(level1);
         this.init();
     },
     methods: {
         async init() {
             const images = await initImages();
-            const canvas = this.$refs.canvas;
-            // 网格
-            this.gridWidth = canvas.width;
-            this.gridHeight = canvas.height;
-            this.gridUnit = baseData.unit;
 
-            // 工具栏资源
-            this.tools = [
-                { type: 'building-Stone', image:  images.building.buildingStone[0]},
-                { type: 'building-Ask', image:  images.building.buildingAsk[3]},
-                { type: 'building-Gold', image:  images.building.buildingGold[4]},
-                { type: 'building-Land', image:  images.building.buildingLand[0]},
-                { type: 'building-Rock', image:  images.building.buildingRock[0]},
-                { type: 'mushroom-Bad', image:  images.mushroom.mushroomBad[0]},
-            ];
-            
-            this.$emit('load', {
-                images,
-                map: this.maps[this.mapActive],
-                canvas
+            this.isLoaded = true;
+
+            this.$nextTick(() => {
+                const canvas = this.$refs.canvas;
+                // 网格
+                this.gridWidth = canvas.width;
+                this.gridHeight = canvas.height;
+                this.gridUnit = baseData.unit;
+
+                // 工具栏资源
+                this.tools = [
+                    { type: 'building-Stone', image:  images.building.buildingStone[0]},
+                    { type: 'building-Ask', image:  images.building.buildingAsk[3]},
+                    { type: 'building-Gold', image:  images.building.buildingGold[4]},
+                    { type: 'building-Land', image:  images.building.buildingLand[0]},
+                    { type: 'building-Rock', image:  images.building.buildingRock[0]},
+                    { type: 'mushroom-Bad', image:  images.mushroom.mushroomBad[0]},
+                ];
+                
+                this.$emit('load', {
+                    images,
+                    map: this.maps[this.mapActive],
+                    canvas
+                });
             });
         },
+
+        // 开始编辑
         handleEditStart() {
             this.$emit('edit-start');
             this.isOpenEditor = true;
         },
+
+        // 结束编辑
         handleEditEnd() {
             this.$emit('edit-end');
             this.isOpenEditor = false;
         },
+
+        // 切换地图
         handleActiveMap({ map, i }) {
             this.mapActive = i;
             this.start();
         },
+
+        // 删除地图
+        handleDeleteMap({ map, i }){
+            this.maps.splice(i, 1);
+            this.mapActive = Math.min(i, this.maps.length - 1);
+            this.start();
+        },
+
         // 添加地图
         handleAddMap() {
             this.maps.push({
@@ -132,6 +154,7 @@ export default ({
             this.start();
             this.handleEditStart();
         },
+
         // 点击网格
         onChangeGrid(grid) {
             if (!this.currentTool) return;
@@ -148,6 +171,7 @@ export default ({
             this.maps[this.mapActive][type].push(data);
             this.$emit('edit', data);
         },
+
         // 开始游戏
         start() {
             this.$emit('start', this.maps[this.mapActive]);

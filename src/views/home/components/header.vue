@@ -1,13 +1,27 @@
 <template>
     <div class="editor-header">
         <div class="editor-header__logo">超级玛丽游戏编辑器</div>
-        <div class="editor-header__edit" @click="handleEdit">{{ isEdit ? '编辑结束' : '开始编辑' }}</div>
+        <div class="editor-header__edit" @click="handleEdit">
+            <Icon name="iconbianjibi"/>
+            {{ isOpenEditor ? '编辑结束' : '开始编辑' }}
+        </div>
     </div>
 </template>
 
 <script>
+import Icon from '@/components/icon';
+
 export default ({
     name: 'editor-header',
+    components: {
+        Icon
+    },
+    props: {
+        isOpenEditor: {
+            type: Boolean,
+            default: false
+        }
+    },
     data() {
         return {
             isEdit: false
@@ -15,9 +29,8 @@ export default ({
     },
     methods: {
         handleEdit() {
-            this.isEdit = !this.isEdit;
-            this.isEdit ? this.$emit('edit-start') : this.$emit('edit-end');
-            
+            this.isOpenEditor ? this.$emit('edit-end') : this.$emit('edit-start');
+            this.$emit('update:isOpenEditor', !this.isOpenEditor)
         }
     }
 });
@@ -42,6 +55,8 @@ export default ({
     }
 
     &__edit {
+        display: flex;
+        align-items: center;
         margin-left: 30px;
         color: #33383e;
         font-size: 12px;
@@ -49,6 +64,11 @@ export default ({
         cursor: pointer;
         &:hover {
             color: #2254f4;
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-right: 4px;
         }
     }
 }

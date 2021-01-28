@@ -5,10 +5,13 @@
             :key="map.name"
             :map="map"
             :active="i === active"
+            :ableDelete="maps.length > 1"
             @click.native="$emit('change', { map, i })"
+            @delete="$emit('delete', { map, i })"
         />
         <Map
             :map="{ title: '添加地图' }"
+            :ableDelete="false"
             @click.native="$emit('add')"
         />
     </div>

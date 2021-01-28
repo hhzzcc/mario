@@ -11,6 +11,8 @@ export class Building extends Sprite {
         this.ableBorn = ableBorn;
         // 是否爆炸
         this.isBorn = false;
+        // 覆盖相同位置的精灵
+        this.ableCoverIdenticalPosition = true;
     }
 
     // 被顶起来

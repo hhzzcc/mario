@@ -12,9 +12,23 @@ export class Scene {
 
     // 添加精灵
     add(sprites) {
-        sprites.forEach(sprite => {
-            sprite && this.sprites.push(sprite);
-        });
+        for (let i = 0; i < sprites.length; i++) {
+            const sprite = sprites[i];
+            if (!sprite) continue;
+            for (let j = 0; j < this.sprites.length; j++) {
+                const sceneSprite = this.sprites[j];
+                // 删除重复位置精灵
+                if (
+                    sprite.x === sceneSprite.x &&
+                    sprite.y === sceneSprite.y &&
+                    sprite.ableCoverIdenticalPosition
+                ) {
+                    sceneSprite.remove();
+                    break;
+                }
+            }
+            this.sprites.push(sprite);
+        }
     }
 
     // 删除精灵

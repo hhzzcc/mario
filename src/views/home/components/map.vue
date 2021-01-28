@@ -1,12 +1,22 @@
 <template>
     <div :class="className">
         <div class="'map__title">{{ map.title }}</div>
+        <Icon
+            name="iconshanchu"
+            @click.native.stop="$emit('delete')"
+            v-if="ableDelete"
+        />
     </div>
 </template>
 
 <script>
+import Icon from '@/components/icon';
+
 export default ({
     name: 'editor-map',
+    components: {
+        Icon
+    },
     props: {
         map: {
             type: Object,
@@ -15,6 +25,10 @@ export default ({
         active: {
             type: Boolean,
             default: false
+        },
+        ableDelete: {
+            type: Boolean,
+            default: true
         }
     },
     computed: {
@@ -38,11 +52,38 @@ export default ({
     cursor: pointer;
     box-shadow: 0 0 0 1px #e8eaec;
     color: #333;
-    transition: background-color .2s;
+    transition: all .2s;
 
-    &:hover, &--active {
+    .icon {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        color: #2254f4;
+        font-size: 20px;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 1px #2254f4;
+        color: #2254f4;
+        .icon {
+            color: #2254f4;
+        }
+    }
+
+    &--active {
         background-color: #2254f4;
         color: #fff;
+        .icon {
+            color: #fff;
+        }
+        
+        &:hover {
+            background-color: #2254f4;
+            color: #fff;
+            .icon {
+                color: #fff;
+            }
+        }
     }
 
     &__title {

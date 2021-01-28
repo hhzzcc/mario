@@ -1,11 +1,14 @@
 <template>
     <div class="editor-tools">
-        <img
-            v-for="(tool, i) in tools"
-            :key="i"
-            :src="tool.image.src"
-            @click="handleClick(tool)"
-            class="editor-tools__tool"/>
+        <div class="editor-tools__tip">小提示：点击下方精灵后点击上方网格可添加</div>
+        <div class="editor-tools__content">
+            <img
+                v-for="(tool, i) in tools"
+                :key="i"
+                :src="tool.image.src"
+                @click="handleClick(tool)"
+                class="editor-tools__tool"/>
+        </div>
     </div>
 </template>
 
@@ -30,8 +33,9 @@ export default ({
 <style lang="less">
 .editor-tools {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    position: relative;
     margin-top: 20px;
     padding: 20px;
     background-image: linear-gradient(to top right,#ccc 25%,transparent 0,transparent 75%,#ccc 0,#ccc),linear-gradient(to top right,#ccc 25%,transparent 0,transparent 75%,#ccc 0,#ccc);
@@ -44,5 +48,22 @@ export default ({
         margin-left: 20px;
         cursor: pointer;
     }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    &__tip {
+        padding: 2px 5px;
+        color: #33383e;
+        font-weight: bold;
+        font-size: 12px;
+        background: #fff;
+        border-radius: 2px;
+    }
+
 }
 </style>
