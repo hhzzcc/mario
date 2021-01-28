@@ -9,7 +9,7 @@ export class MushroomGrow extends Mushroom {
         // 是否从墙中出现
         this.isAppear = false;
         // 不受物理影响
-        this.isPhysical = false;
+        this.ablePhysical = false;
     }
 
     // 处理蘑菇出现
@@ -29,7 +29,7 @@ export class MushroomGrow extends Mushroom {
         // 出现后运行移动，受物理效果影响
         if (this.appearOffset >= this.h - n) {
             this.isAbleMove = true;
-            this.isPhysical = true;
+            this.ablePhysical = true;
         }
     }
 

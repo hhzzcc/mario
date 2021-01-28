@@ -12,6 +12,7 @@
             @page-prev="handlePagePrev"
             @page-next="handlePageNext"
         />
+        <!-- <Icon name="iconloading-copy"/> -->
     </div>
 </template>
 
@@ -248,3 +249,8 @@ export default ({
     }
 });
 </script>
+
+<style lang="less">
+.home {
+}
+</style>

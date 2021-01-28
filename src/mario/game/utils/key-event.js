@@ -5,6 +5,7 @@ const handler = (obj, direction, isPress) => {
 
 export const addKeyEvent = obj => {
     const onKeyDown = e => {
+        e.preventDefault();
         switch(e.keyCode) {
             case 38:
                 handler(obj, 'Top', true);

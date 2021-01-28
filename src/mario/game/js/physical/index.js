@@ -322,7 +322,7 @@ export class Physical {
                     }
 
                     // 对成长蘑菇处理
-                    if (dynamicSpriteOther.type === 'mushroom-Grow' && dynamicSpriteOther.isPhysical) {
+                    if (dynamicSpriteOther.type === 'mushroom-Grow' && dynamicSpriteOther.ablePhysical) {
                         person.growToBig();
                         dynamicSpriteOther.remove();
                     }
@@ -364,7 +364,7 @@ export class Physical {
             }
 
             // 跳过不受物理效果影响的精灵
-            if (!dynamicSprite.isPhysical) {
+            if (!dynamicSprite.ablePhysical) {
                 continue;
             }
 
