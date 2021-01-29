@@ -4,6 +4,9 @@
             :camera="camera"
             :fps="fps"
             :loaded="ableLoadedEditor"
+            :cameraX="camera ? camera.x : 0"
+            :cameraY="camera ? camera.y : 0"
+            :staticSprites="physical ? physical.staticSprites : {}"
             @load="handleLoad"
             @start="handleStart"
             @edit-start="handleEditStart"
@@ -95,24 +98,7 @@ export default ({
         },
 
         // 网格编辑
-        handleEdit(data) {
-            const { images } = this;
-            const sprites = {
-                buildings: [],
-                mushroomsBad: [],
-                mushroomsGrow: []
-            };
-
-            if (data.type.includes('building')) {
-                sprites.buildings = createMap(images, [data]);
-                if (data.type.includes('Ask')) {
-                    sprites.mushroomsGrow = createMushroomGrow(sprites.buildings, images);
-                }
-            }
-
-            if (data.type.includes('mushroom')) {
-                sprites.mushroomsBad = createMushroomBad(images, [data]);
-            }
+        handleEdit(sprites) {
 
             this.sceneAddSprite(sprites, false);
             this.physicalAddSprite(sprites, false);

@@ -90,6 +90,15 @@ const initBuildingImages = () => {
         loadImage('/imgs/building/flow/frame-2.gif'),
         loadImage('/imgs/building/flow/frame-3.gif'),
         loadImage('/imgs/building/flow/frame-4.gif'),
+
+        loadImage('/imgs/building/pipe/pipelineL.png'),
+        loadImage('/imgs/building/pipe/pipelineR.png'),
+        loadImage('/imgs/building/pipe/pipelineTopL.png'),
+        loadImage('/imgs/building/pipe/pipelineTopR.png'),
+
+        loadImage('/imgs/building/win/flag.png'),
+        loadImage('/imgs/building/win/round.png'),
+        loadImage('/imgs/building/win/rod.png'),
     ]);
 };
 
@@ -179,7 +188,16 @@ export const initImages = async () => {
         buildingFlowFrame0,
         buildingFlowFrame1,
         buildingFlowFrame2,
-        buildingFlowFrame3
+        buildingFlowFrame3,
+
+        buildingPipeLeft,
+        buildingPipeRight,
+        buildingPipeTopLeft,
+        buildingPipeTopRight,
+
+        buildingWinFlag,
+        buildingWinRound,
+        buildingWinRod,
     ] = await initBuildingImages();
 
 
@@ -265,7 +283,19 @@ export const initImages = async () => {
                 buildingFlowFrame1,
                 buildingFlowFrame2,
                 buildingFlowFrame3
-            ]
+            ],
+            buildingPipeLeft: [buildingPipeLeft],
+            buildingPipeRight: [buildingPipeRight],
+            buildingPipeTopLeft: [buildingPipeTopLeft],
+            buildingPipeTopRight: [buildingPipeTopRight],
+
+            buildingWin: [
+                buildingWinFlag,
+                buildingWinRound,
+                buildingWinRod,
+                
+            ],
+            buildingWinRod: [buildingWinRod]
         },
         scene: {
             sceneBackground: [sceneBackground]

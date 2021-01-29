@@ -1,4 +1,5 @@
 export const level1 = {
+	title: '地图1',
 	mapData: [
 		{ type: 'building-Land', x: 0, y: 416 },
 		{ type: 'building-Land', x: 0, y: 448 },
@@ -220,7 +221,19 @@ export const level1 = {
 		{ type: 'building-Flow', x: 544, y: 352 },
 		{ type: 'building-Flow', x: 576, y: 352 },
 		{ type: 'building-Stone', x: 192, y: 128 },
-		{ type: 'building-Stone', x: 192, y: 160 }
+		{ type: 'building-Stone', x: 192, y: 160 },
+		{ type: 'building-WinRod', x: 704, y: 64 },
+		{ type: 'building-WinRod', x: 704, y: 96 },
+		{ type: 'building-WinRod', x: 704, y: 128 },
+		{ type: 'building-WinRod', x: 704, y: 160 },
+		{ type: 'building-WinRod', x: 704, y: 192 },
+		{ type: 'building-WinRod', x: 704, y: 224 },
+		{ type: 'building-WinRod', x: 704, y: 256 },
+		{ type: 'building-WinRod', x: 704, y: 288 },
+		{ type: 'building-WinRod', x: 704, y: 320 },
+		{ type: 'building-WinRod', x: 704, y: 352 },
+		{ type: 'building-WinRod', x: 704, y: 384 },
+		{ type: 'building-Win', x: 704, y: 32 }
 	],
 	mushroomData: [
 		{ type: 'mushroom-Bad', x: 448, y: 352 },

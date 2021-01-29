@@ -1,5 +1,5 @@
 import { baseData } from '../data/base';
-import { BuildingAsk, BuildingGold, BuildingFlow, BuildingStone, BuildingNormal } from '../js/building';
+import { BuildingAsk, BuildingGold, BuildingFlow, BuildingStone, BuildingWin, BuildingNormal } from '../js/building';
 
 const handleBuilding = (m, allImages) => {
     
@@ -29,6 +29,8 @@ const handleBuilding = (m, allImages) => {
                 ableHorn: true,
                 ableBorn: true
             });
+        case 'building-Win':
+            return new BuildingWin(params);
     }
     return new BuildingNormal(params);
 };

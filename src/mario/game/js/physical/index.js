@@ -25,7 +25,18 @@ export class Physical {
     // 添加静态精灵（用键值对形式，为了提升性能）
     addStaticSprite(staticSprites) {
         for (const key in staticSprites) {
-            this.staticSprites[key] = staticSprites[key];
+            const staticSprite = staticSprites[key];
+            this.staticSprites[key] = staticSprite;
+            // 添加精灵中的精灵
+            const sprites = staticSprite.sprites;
+            if (sprites.length) {
+                let obj = {};
+                for (let i = 0; i < sprites.length; i++) {
+                    const sprite = sprites[i];
+                    obj[sprite.x + ',' + sprite.y] = sprite;
+                }
+                this.addStaticSprite(obj);
+            }
         }
     }
 

@@ -3,7 +3,7 @@ import { Building, BuildingBorn } from './index.js';
 export class BuildingStone extends Building {
     constructor(options) {
         super(options);
-        this.type = 'building-Land';
+        this.type = 'building-Stone';
     }
 
     // 处理爆炸

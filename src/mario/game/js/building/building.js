@@ -3,7 +3,7 @@ import { baseData } from '@/mario/game/data/base';
 
 export class Building extends Sprite {
     constructor(options) {
-        const { images, x, y, w = baseData.unit, h = baseData.unit, ableHorn, ableBorn } = options;
+        const { images, x, y, w = baseData.unit, h = baseData.unit, ableHorn, ableBorn, type = 'building' } = options;
         super({ images, x, y, w, h });
         // 是否允许被顶起来
         this.ableHorn = ableHorn;
@@ -11,8 +11,9 @@ export class Building extends Sprite {
         this.ableBorn = ableBorn;
         // 是否爆炸
         this.isBorn = false;
-        // 覆盖相同位置的精灵
-        this.ableCoverIdenticalPosition = true;
+        // 相同位置添加时候，运行被覆盖
+        this.ableBeCover = true;
+        this.type = type;
     }
 
     // 被顶起来

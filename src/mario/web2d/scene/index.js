@@ -21,13 +21,14 @@ export class Scene {
                 if (
                     sprite.x === sceneSprite.x &&
                     sprite.y === sceneSprite.y &&
-                    sprite.ableCoverIdenticalPosition
+                    sceneSprite.ableBeCover
                 ) {
                     sceneSprite.remove();
                     break;
                 }
             }
             this.sprites.push(sprite);
+            sprite.sprites.length && this.add(sprite.sprites);
         }
     }
 

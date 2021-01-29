@@ -29,7 +29,9 @@ export class Sprite {
         // 是否受物理效果影响
         this.ablePhysical = true;
         // 是否覆盖相同位置下的精灵
-        this.ableCoverIdenticalPosition = false;
+        this.ableBeCover = false;
+        // 当前包含的精灵
+        this.sprites = [];
     }
 
     run() {
