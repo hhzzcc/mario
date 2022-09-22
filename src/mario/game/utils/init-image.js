@@ -9,110 +9,228 @@ const loadImage = (url) => {
 
 const initBasePersonImages = () => {
   return Promise.all([
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/static/static.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/jump/jump-back.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/jump/jump-front.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/front/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/front/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/front/frame-3.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/back/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/back/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/back/frame-3.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/base/die/die.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/static/static.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/jump/jump-back.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/jump/jump-front.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/front/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/front/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/front/frame-3.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/back/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/back/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/back/frame-3.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/base/die/die.png"
+    ),
   ]);
 };
 
 const initBigPersonImages = () => {
   return Promise.all([
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/static/index.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/jump/back.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/jump/index.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/static/index.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/jump/back.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/jump/index.png"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/front/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/front/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/front/frame-3.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/front/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/front/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/front/frame-3.gif"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/back/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/back/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/big/back/frame-3.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/back/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/back/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/big/back/frame-3.gif"
+    ),
   ]);
 };
 
 const initBulletPersonImages = () => {
   return Promise.all([
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/static/index.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/jump/back.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/jump/index.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/static/index.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/jump/back.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/jump/index.png"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/front/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/front/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/front/frame-3.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/front/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/front/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/front/frame-3.gif"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/back/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/back/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/back/frame-3.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/back/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/back/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/back/frame-3.gif"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/bullet/back.png"),
-    loadImage("https://hhzzcc.github.io/imgs/persons/bullet/bullet/index.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/bullet/back.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/persons/bullet/bullet/index.png"
+    ),
   ]);
 };
 
 const initMushRoomsImages = () => {
   return Promise.all([
-    loadImage("https://hhzzcc.github.io/imgs/mushroom/grow/grow.png"),
-    loadImage("https://hhzzcc.github.io/imgs/mushroom/bad/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/mushroom/bad/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/mushroom/bad/die.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/mushroom/grow/grow.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/mushroom/bad/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/mushroom/bad/frame-2.gif"
+    ),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/mushroom/bad/die.gif"),
   ]);
 };
 
 const initBuildingImages = () => {
   return Promise.all([
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/frame-3.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/frame-4.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/frame-5.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/frame-6.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/ask/nothing.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/land/land.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/stone/stone.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/rock/rock.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/frame-3.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/frame-4.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/frame-5.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/frame-6.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/ask/nothing.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/land/land.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/stone/stone.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/rock/rock.png"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/building/gold/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/gold/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/gold/frame-3.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/gold/frame-4.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/gold/frame-5.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/gold/frame-6.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/gold/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/gold/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/gold/frame-3.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/gold/frame-4.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/gold/frame-5.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/gold/frame-6.gif"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/building/flow/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/flow/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/flow/frame-3.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/building/flow/frame-4.gif"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/flow/frame-1.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/flow/frame-2.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/flow/frame-3.gif"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/flow/frame-4.gif"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/building/pipe/pipelineL.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/pipe/pipelineR.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/pipe/pipelineTopL.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/pipe/pipelineTopR.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/pipe/pipelineL.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/pipe/pipelineR.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/pipe/pipelineTopL.png"
+    ),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/pipe/pipelineTopR.png"
+    ),
 
-    loadImage("https://hhzzcc.github.io/imgs/building/win/flag.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/win/round.png"),
-    loadImage("https://hhzzcc.github.io/imgs/building/win/rod.png"),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/building/win/flag.png"),
+    loadImage(
+      "https://hhzzcc.github.io/mario/dist/imgs/building/win/round.png"
+    ),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/building/win/rod.png"),
   ]);
 };
 
 const initBulletImages = () => {
   return Promise.all([
-    loadImage("https://hhzzcc.github.io/imgs/bullet/frame-1.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/bullet/frame-2.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/bullet/frame-3.gif"),
-    loadImage("https://hhzzcc.github.io/imgs/bullet/frame-4.gif"),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/bullet/frame-1.gif"),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/bullet/frame-2.gif"),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/bullet/frame-3.gif"),
+    loadImage("https://hhzzcc.github.io/mario/dist/imgs/bullet/frame-4.gif"),
   ]);
 };
 
 const initSceneImages = () => {
-  return loadImage("https://hhzzcc.github.io/imgs/scene/background.jpg");
+  return loadImage(
+    "https://hhzzcc.github.io/mario/dist/imgs/scene/background.jpg"
+  );
 };
 
 export const initImages = async () => {
