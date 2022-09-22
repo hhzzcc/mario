@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-    chainWebpack: config => {
-        config.resolve.alias
-            .set('@', path.resolve('./src'))
-    }
+  publicPath: "/mario/dist",
+  chainWebpack: (config) => {
+    config.resolve.alias.set("@", path.resolve("./src"));
+  },
 };
